@@ -107,6 +107,19 @@ public class SciNot {
 		return c;
 	}
 	
+	public SciNot sqrt(){
+		SciNot c = new SciNot();
+		if(this.exp%2==0){
+			c.num = Math.sqrt(this.num);
+			c.exp = (short)(this.exp/2);
+			return c;
+		}
+		else{
+			c.num = Math.sqrt(this.num);
+			c.exp = (short)((this.exp-1)/2);
+			return c;
+		}
+	}
 	
 	//Public Access
 	public double getNum (){
