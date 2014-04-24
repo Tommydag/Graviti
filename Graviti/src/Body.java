@@ -1,5 +1,6 @@
 
 public class Body {
+	final static SciNot G = new SciNot(6.67384,(short)-11);
 
 	public SciNot getMass() {
 		return mass;
@@ -44,4 +45,19 @@ public class Body {
 		this.velocity = v;
 		this.radius = rad;
 	}
+	public SciNot magnitude (Body other){
+		
+		SciNot multiplication = (this.mass.multiply(other.mass)).multiply(G);
+		
+		multiplication.divide( ())
+		
+	}
+	public SciNot distance (Body other){
+		return;
+	}
+	
+	
+	
+	
+	
 }
