@@ -1,6 +1,39 @@
-
+/**
+ * @author dagosttv
+ *
+ */
 public class Body {
-	final static SciNot G = new SciNot(6.67384,(short)-11);
+	
+	private final static SciNot G = new SciNot(6.67384, (short) -11);
+	public final static SciNot MASS_EARTH = new SciNot(5.97219, (short) 24);
+	public final static SciNot MASS_SUN = new SciNot(1.98855, (short) 30);
+	public final static SciNot DISTANCE_EARTHANDSUN = new SciNot(1.496, (short) 8);
+	
+
+	private SciNot mass;
+	private SciNot[] position;
+	private SciNot[] velocity;
+	private int radius;
+
+	public Body(SciNot m, SciNot[] p, SciNot[] v, int rad) {
+		this.mass = m;
+		this.position = p;
+		this.velocity = v;
+		this.radius = rad;
+	}
+
+	
+	public SciNot magnitude(Body other) {
+		return ((this.mass.multiply(other.mass)).multiply(G)).divide(this
+				.distance(other));
+	}
+
+	// Returns the squared distance
+	public SciNot distance(Body other) {
+		SciNot xDiff = (this.position[0].subtract(other.position[0]));
+		SciNot yDiff = (this.position[1].subtract(other.position[1]));
+		return ((xDiff.multiply(xDiff)).add(yDiff.multiply(yDiff)));
+	}
 
 	public SciNot getMass() {
 		return mass;
@@ -34,30 +67,4 @@ public class Body {
 		this.radius = radius;
 	}
 
-	SciNot mass;
-	SciNot[] position;
-	SciNot[] velocity;
-	int radius;
-	
-	public Body(SciNot m, SciNot[] p, SciNot[] v,int rad){
-		this.mass = m;
-		this.position = p;
-		this.velocity = v;
-		this.radius = rad;
-	}
-	public SciNot magnitude (Body other){
-		
-		SciNot multiplication = (this.mass.multiply(other.mass)).multiply(G);
-		
-		multiplication.divide( ())
-		
-	}
-	public SciNot distance (Body other){
-		return;
-	}
-	
-	
-	
-	
-	
 }

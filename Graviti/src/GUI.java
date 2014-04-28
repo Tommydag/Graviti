@@ -1,9 +1,7 @@
 
-
 import javax.swing.JFrame;
 
-
-public class GUI{
+public class GUI {
 
 	public GUI() {
 		JFrame frame = new JFrame();
@@ -14,7 +12,7 @@ public class GUI{
 		frame.setSize(1792, 1008);
 		frame.add(panel);
 		frame.setVisible(true);
-		while(true){
+		while (true) {
 			panel.repaint();
 			try {
 				Thread.sleep(100);
