@@ -1,7 +1,8 @@
 /**
  * @author dagosttv
  * @date 4/20/14 updated: 8/5/2014
- * @version 0.2 Purpose: Provide an easy way to handle the very large numbers
+ * @version 0.3
+ *  Purpose: Provide an easy way to handle the very large numbers
  *          that appear in celestial mechanics.
  * 
  *          A SciNot object follows the format: num * 10^(exp)
@@ -115,43 +116,36 @@ public class SciNot {
 	}
 
 	/**
+	 * working
 	 * 
 	 * @param b
 	 * @return The quotient of two SciNot objects
 	 */
 	public SciNot divide(final SciNot b) {
 		final SciNot c = new SciNot();
+
 		if (b.num == 0) {
 			System.out.println("!!!Divide by zero error!!!");
 			return c;
 		}
+
 		c.num = (this.num / b.num);
 		c.exp = ((short) (this.exp - b.exp));
-		while (c.num < 1) {
-			c.num *= 10;
-			c.exp--;
-		}
-		return c;
+
+		return new SciNot(c.num, c.exp);
 	}
 
 	/**
+	 * working
 	 * 
 	 * @param b
 	 * @return The product of two SciNot Objects
 	 */
 	public SciNot multiply(final SciNot b) {
-		final SciNot c = new SciNot();
+		SciNot c = new SciNot();
 		c.num = (this.num * b.num);
-		c.exp = ((short) (c.exp + b.exp));
-		while (c.getNum() < 1) {
-			c.num *= 10;
-			c.exp--;
-		}
-		while (c.getNum() >= 10) {
-			c.num /= 10;
-			c.exp++;
-		}
-		return c;
+		c.exp = ((short) (this.exp + b.exp));
+		return new SciNot(c.num, c.exp);
 	}
 
 	/**
@@ -191,17 +185,23 @@ public class SciNot {
 	}
 
 	/**
+	 * Working 
+	 * If given a negative number, the method returns a blank SciNot
+	 * Object and prints a warning
 	 * 
 	 * @return sqrt of a SciNot
 	 */
 	public SciNot sqrt() {
 		final SciNot c = new SciNot();
-		if (this.exp % 2 == 0) {
+		if (this.num < 0) {
+			System.out.println("ERROR: SQRT of a negative number");
+			return c;
+		} else if (this.exp % 2 == 0) {
 			c.num = Math.sqrt(this.num);
 			c.exp = (short) (this.exp / 2);
 			return c;
 		} else {
-			c.num = Math.sqrt(this.num);
+			c.num = Math.sqrt(this.num * 10);
 			c.exp = (short) ((this.exp - 1) / 2);
 			return c;
 		}
