@@ -4,7 +4,10 @@ import java.awt.Graphics;
 import javax.swing.JPanel;
 
 /**
- * 
+ * @author dagosttv
+ * @date 4/20/14
+ * @version 0.1
+ * Purpose: Not functional. Eventually will be in charge of the displaying of bodies.
  */
 
 /**

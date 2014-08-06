@@ -1,6 +1,9 @@
 /**
  * @author dagosttv
- *
+ * @date 4/20/14
+ * @version 0.1
+ * Purpose: To allow for easy assignment of all of the vectors (properties)
+ * 	a body can have in this simulator.
  */
 public class Body {
 	
@@ -36,7 +39,7 @@ public class Body {
 	}
 
 	public SciNot getMass() {
-		return mass;
+		return this.mass;
 	}
 
 	public void setMass(SciNot mass) {
@@ -44,7 +47,7 @@ public class Body {
 	}
 
 	public SciNot[] getPosition() {
-		return position;
+		return this.position;
 	}
 
 	public void setPosition(SciNot[] position) {
@@ -52,7 +55,7 @@ public class Body {
 	}
 
 	public SciNot[] getVelocity() {
-		return velocity;
+		return this.velocity;
 	}
 
 	public void setVelocity(SciNot[] velocity) {
@@ -60,7 +63,7 @@ public class Body {
 	}
 
 	public int getRadius() {
-		return radius;
+		return this.radius;
 	}
 
 	public void setRadius(int radius) {
