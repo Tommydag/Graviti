@@ -1,7 +1,7 @@
 /**
  * @author dagosttv
  * @date 4/20/14 updated: 8/5/2014
- * @version 0.3
+ * @version 1.0
  *  Purpose: Provide an easy way to handle the very large numbers
  *          that appear in celestial mechanics.
  * 
@@ -9,6 +9,11 @@
  */
 
 public class SciNot {
+	
+	/**
+	 * A Static Zero for comparison Purposes
+	 */
+	public static final SciNot ZERO = new SciNot(0d,(short)0);
 
 	/**
 	 * The floating point base of a SciNot Object

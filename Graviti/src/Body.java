@@ -19,10 +19,21 @@ public class Body {
 	private int radius;
 
 	public Body(SciNot m, SciNot[] p, SciNot[] v, int rad) {
-		this.mass = m;
+		
+		if(m.compareTo(SciNot.ZERO)==-1){
+			System.out.println("Negative Mass, IT'S A TRAP!");
+			this.mass = SciNot.ZERO;
+		}
+		else{
+			this.mass = m;
+		}
+		if(rad<0){
+			System.out.println("Negative Radius, IT'S A TRAP!");
+		}
+		this.radius = Math.abs(rad);
 		this.position = p;
 		this.velocity = v;
-		this.radius = rad;
+		
 	}
 
 	
