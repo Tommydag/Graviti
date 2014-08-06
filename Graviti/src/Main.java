@@ -7,6 +7,8 @@
 
 public class Main {
 
+	static Boolean Speed_Test = false;
+	
 	public static void main(String[] args) {
 //		System.out.println("Norm " + sci);
 //		System.out.println("Norm2 " + sci2);
@@ -28,7 +30,11 @@ public class Main {
 //		Body two = new Body(Body.MASS_EARTH, twoP, twoV, 10);
 //		System.out.println("One on Two: " + one.magnitude(two));
 		//new GUI();
-
+		
+		if(Speed_Test){
+			SpeedComparison wow = new SpeedComparison(320,20);
+			wow.test();
+		}
 	}
 
 }
