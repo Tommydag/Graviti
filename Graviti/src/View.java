@@ -18,6 +18,7 @@ import javax.swing.JPanel;
 public class View extends JPanel {
 	private int X;
 	private int Y;
+	
 
 	/**
 	 * Creates a JPanel to be displayed
