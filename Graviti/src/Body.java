@@ -1,7 +1,7 @@
 /**
  * @author dagosttv
  * @date 4/20/14
- * @version 0.1
+ * @version 1.0
  * Purpose: To allow for easy assignment of all of the vectors (properties)
  * 	a body can have in this simulator.
  */

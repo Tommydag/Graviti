@@ -27,6 +27,7 @@ public class BodyTest {
 		System.out.println(earth.magnitude(sun));
 		assertEquals(0, earth.magnitude(sun).compareTo(new SciNot(3.541463213,(short)22)));
 		assertEquals(0, earthMinus.magnitude(sun).compareTo(new SciNot(3.541463213,(short)22)));
+		
 	}
 
 }
