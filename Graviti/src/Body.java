@@ -36,7 +36,7 @@ public class Body {
 		
 	}
 
-	
+	//Returns the magnitude of the gravitational force caused by another object
 	public SciNot magnitude(Body other) {
 		return ((this.mass.multiply(other.mass)).multiply(G)).divide(this
 				.distance(other));
@@ -44,11 +44,19 @@ public class Body {
 
 	// Returns the squared distance
 	public SciNot distance(Body other) {
-		SciNot xDiff = (this.position[0].subtract(other.position[0]));
-		SciNot yDiff = (this.position[1].subtract(other.position[1]));
-		return ((xDiff.multiply(xDiff)).add(yDiff.multiply(yDiff)));
+		return ((deltaX(other).multiply(deltaX(other))).add(deltaY(other).multiply(deltaY(other))));
 	}
 
+	//Returns the difference in x coordinates
+	public SciNot deltaX(Body other){
+		return (this.position[0].subtract(other.position[0]));
+	}
+	
+	//Returns the difference in x coordinates
+	public SciNot deltaY(Body other){
+		return (this.position[1].subtract(other.position[1]));
+	}
+	
 	public SciNot getMass() {
 		return this.mass;
 	}

@@ -1,19 +1,18 @@
+import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Image;
 import java.awt.Toolkit;
 
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JToolBar;
+import javax.swing.JSlider;
 
 /**
  * @author dagosttv
  * @date 4/20/14
- * @version 0.1 Purpose: View the interactions of the bodies. Not Functional.
+ * @version 0.2 Purpose: View the interactions of the bodies. Not Functional.
  */
 
 public class GUI {
@@ -29,6 +28,7 @@ public class GUI {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		JFrame.setDefaultLookAndFeelDecorated(true);
 		frame.setResizable(true);
+		frame.setLayout(new BorderLayout());
 
 		// Adjusts starting resolution in accordance with screen aspect ratio
 		// and resolution
@@ -45,6 +45,7 @@ public class GUI {
 		}
 
 		GUI.addJMenuBar(frame);
+		GUI.addJSlider(frame);
 
 		View panel = new View();
 		frame.add(panel);
@@ -70,6 +71,16 @@ public class GUI {
 		jmb.add(help);
 
 		f1.setJMenuBar(jmb);
+	}
+	
+	private static void addJSlider(JFrame f1){
+		JSlider timeSlider = new JSlider(0,100,50);
+		timeSlider.setPaintLabels(true);
+		timeSlider.setPaintTicks(true);
+		timeSlider.setMajorTickSpacing(10);
+		timeSlider.setBackground(Color.darkGray);
+		timeSlider.setForeground(Color.WHITE);
+		f1.add(timeSlider,BorderLayout.SOUTH);
 	}
 
 }
